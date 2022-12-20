@@ -240,37 +240,54 @@ print(sample(lst, 1))
 '''
 
 # [코드]
-class SoldOutError(Exception):
-  def __init__(self, msg):
-    self.msg = msg
+# class SoldOutError(Exception):
+#   def __init__(self, msg):
+#     self.msg = msg
   
-  def __str__(self):
-    return self.msg
+#   def __str__(self):
+#     return self.msg
 
 
-chicken = 10
-waiting = 1 # 홀 안에은 현재 만석. 대기번호 1부터 시작
-while(True):
-    try:
-      print("[남은 치킨 : {0}]".format(chicken))
-      order = int(input("치킨 몇 마리 주문하시겠습니까?"))
-      if order > chicken: # 남은 치킨보다 주문량이 많을때
-        print("재료가 부족합니다.")
-      elif order <= 0:
-        raise ValueError
-      else:
-        print("[대기번호 {0}] {1} 마리 주문이 완료되었습니다.".format(waiting, order))
-        waiting += 1
-        chicken -= order
+# chicken = 10
+# waiting = 1 # 홀 안에은 현재 만석. 대기번호 1부터 시작
+# while(True):
+#     try:
+#       print("[남은 치킨 : {0}]".format(chicken))
+#       order = int(input("치킨 몇 마리 주문하시겠습니까?"))
+#       if order > chicken: # 남은 치킨보다 주문량이 많을때
+#         print("재료가 부족합니다.")
+#       elif order <= 0:
+#         raise ValueError
+#       else:
+#         print("[대기번호 {0}] {1} 마리 주문이 완료되었습니다.".format(waiting, order))
+#         waiting += 1
+#         chicken -= order
         
-      if chicken == 0:
-        raise SoldOutError("재고가 소진되어 더 이상 주문을 받지 않습니다.")
+#       if chicken == 0:
+#         raise SoldOutError("재고가 소진되어 더 이상 주문을 받지 않습니다.")
         
-    except ValueError:
-      print("잘못된 값을 입력하였습니다.")
-    except SoldOutError as err:
-      print(err)
-      break
+#     except ValueError:
+#       print("잘못된 값을 입력하였습니다.")
+#     except SoldOutError as err:
+#       print(err)
+#       break
 
+# Quiz 10
+'''
+프로젝트 내에 나만의 시그니처를 남기는 모듈을 만드시오.
 
-aaabb
+조건 : 모듈 파일명은 byme.py 로 작성
+
+모듈 사용 예제
+import byme
+byme.sign()
+
+출력 예제
+이 프로그램은 이종훈에 의해 만들어졌습니다.
+
+유튜브 : http://youtube.com
+이메일 : bwkw@naver.com
+'''
+import byme
+byme.sign()
+
